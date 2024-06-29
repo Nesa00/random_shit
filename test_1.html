@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Centered Sliding Button</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      position: relative;
+    }
+
+    .centered-container {
+      text-align: center;
+    }
+
+    .slider-container {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 34px;
+      margin: 0 auto;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    input[type="checkbox"]:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input[type="checkbox"]:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    h1 {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-container">
+    <h1>Nesin test server</h1>
+    <label class="slider-container">
+      <input type="checkbox">
+      <span class="slider"></span>
+    </label>
+  </div>
+</body>
+</html>
